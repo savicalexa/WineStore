@@ -1,0 +1,1063 @@
+:root{
+  --brand:#7e2a2a; --ink:#0e0e0e; --paper:#fff; --muted:#f6f6f6;
+}
+
+html,body{ background:var(--paper); color:var(--ink); }
+
+.header { border-bottom:1px solid #ececec; background:#fff8f8; }
+.brand { font-family: "Playfair Display", serif; letter-spacing:-0.02em; }
+
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: opacity .6s ease;
+}
+
+/* centriraj tekst */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.hero-content h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.hero::after{
+  content:""; position:absolute; inset:0;
+  background-image:url('https://images.unsplash.com/photo-1514362545857-3bc16c4c76ef?q=80&w=1800&auto=format&fit=crop');
+  background-size:cover; background-position:center;
+  opacity:.25; filter:saturate(0.9);
+}
+.hero-inner{
+  position:relative; z-index:1; padding:3rem 2rem;
+}
+.hero h1{ font-family:"Playfair Display", serif; line-height:1.1; margin:0 0 .5rem 0; }
+.hero p{ max-width:60ch; color:#3a3a3a }
+
+.grid-4{
+  display:grid; gap:1rem;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+}
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  transition: opacity .6s ease;
+}
+
+.hero-darken {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.5); /* 50% crni overlay */
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  text-align: center;
+  padding: 6rem 1rem;
+}
+.hero-content h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.card{
+  background:var(--muted); border-radius:16px; padding:1rem; border:1px solid #eee;
+  transition: box-shadow .2s ease, transform .2s ease;
+}
+.card:hover{ box-shadow:0 6px 24px rgba(0,0,0,.06); transform:translateY(-2px); }
+.card .thumb{ aspect-ratio:4/5; background:#fff; border-radius:12px; margin-bottom:.75rem; }
+
+.badge{ background:var(--brand); color:#fff; border-radius:999px; padding:0 .5rem; font-size:.75rem; }
+
+.btn-outline{ border:1px solid #ddd; background:transparent; }
+.btn-outline:hover{ border-color:#bbb; }
+
+.footer{ border-top:1px solid #ececec; color:#666; }
+.footer a{ color:inherit; text-decoration: none; }
+/* ---- Header / Nav ---- */
+.header.full-bleed { background:#fff; border-bottom:1px solid #ececec; }
+.navbar { display:flex; gap:1rem; align-items:center; height:72px; }
+.nav-left, .nav-right { display:flex; gap:1rem; align-items:center; }
+.nav-link { text-decoration:none; color:#222; opacity:.9; }
+.nav-link:hover { opacity:1; }
+.search { min-width: 320px; }
+
+/* ---- Hero slider ---- */
+.hero.full-bleed { min-height: 56vh; position:relative; }
+.hero-track { position:relative; overflow:hidden; }
+.hero-slide { position:absolute; inset:0; background-size:cover; background-position:center; transition:opacity .6s ease; }
+.hero-overlay { position:absolute; inset:0; background:linear-gradient(90deg, rgba(0,0,0,.45), rgba(0,0,0,.15) 50%, transparent); }
+.hero-content {
+  position:relative; z-index:2; color:#fff; padding:3rem 0; max-width: 1200px; margin:auto;
+}
+.hero h1 { font-family:"Playfair Display",serif; font-size: clamp(2rem, 5vw, 3rem); margin:0 0 .5rem; }
+
+/* ---- Section headers ---- */
+.section { margin: 2.5rem 0 1.5rem; }
+.section h2 { font-family:"Playfair Display",serif; margin:0; }
+.section p { color:#555; margin:.25rem 0 0; }
+
+/* ---- Product grid & card ---- */
+.grid-5{ display:grid; gap:1rem; grid-template-columns: repeat(auto-fill, minmax(220px,1fr)); }
+.card { background:#f6f6f6; border:1px solid #eee; border-radius:16px; padding:1rem; transition:.2s; }
+.card:hover{ box-shadow:0 8px 24px rgba(0,0,0,.06); transform: translateY(-2px); }
+.thumb { aspect-ratio:4/5; background:#fff; border-radius:12px; margin-bottom:.75rem; }
+.badges { display:flex; gap:.4rem; flex-wrap:wrap; margin:.25rem 0 .5rem; }
+.badge { background:#7e2a2a; color:#fff; border-radius:999px; padding:0 .5rem; font-size:.7rem; }
+.actions{ display:flex; justify-content:space-between; align-items:center; }
+
+/* ---- Filters sidebar ---- */
+.catalog { display:grid; grid-template-columns: 280px 1fr; gap:1.25rem; }
+.filter-card{ background:#fff; border:1px solid #eee; border-radius:12px; padding:1rem; position:sticky; top:84px; height:max-content; }
+.filter-group { margin-bottom:1rem; }
+.price-row { display:flex; gap:.5rem; }
+.chips{ display:flex; gap:.5rem; flex-wrap:wrap; }
+.chip{ border:1px solid #ddd; padding:.25rem .5rem; border-radius:999px; background:#fff; cursor:pointer; }
+.chip.active{ border-color:#7e2a2a; color:#7e2a2a; }
+
+/* ---- Footer ---- */
+.footer.full-bleed { border-top:1px solid #ececec; background:#fff; color:#555; }
+.footer-grid{ display:grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap:1rem; }
+.newsletter { display:flex; gap:.5rem; }
+
+/* === Vivino-like header === */
+.brand.vivino { 
+  font-weight: 800; 
+  letter-spacing: .02em; 
+  color: #b11226; 
+  font-size: 1.6rem; 
+  text-decoration: none;
+}
+
+.topbar { 
+  display:flex; align-items:center; gap:1rem; height:72px;
+}
+.search-wrap { flex: 1 1 auto; display:flex; }
+.search { 
+  width: 100%; max-width: 680px; 
+  height: 40px; padding: 0 .9rem; 
+  border: 1px solid #e6e6e6; border-radius: 999px; 
+  background: #fff; color: #222;
+}
+.search:focus { outline: none; border-color:#d0d0d0; box-shadow: 0 0 0 3px rgba(177,18,38,.08); }
+
+.topbar-right { display:flex; align-items:center; gap:.5rem; }
+.ghost { 
+  background:transparent; border:1px solid transparent; 
+  display:flex; align-items:center; gap:.4rem; padding:.4rem .6rem; 
+  border-radius:10px; color:#222; cursor:pointer;
+}
+.ghost.small { padding:.35rem .55rem; font-size:.9rem; }
+.secondary.outline.small { padding:.35rem .65rem; font-size:.9rem; }
+
+.menubar { height: 52px; display:flex; align-items:center; }
+.menu { display:flex; gap:1.2rem; align-items:center; }
+.nav-item { 
+  display:inline-flex; align-items:center; gap:.45rem; 
+  text-decoration:none; color:#222; opacity:.9; padding:.35rem .45rem; 
+  border-radius:10px;
+}
+.nav-item:hover { opacity:1; background:#f6f6f6; }
+.nav-item .icon { display:inline-flex; align-items:center; }
+
+.pill-badge { 
+  background:#f0cf62; color:#000; 
+  border-radius:999px; padding:.05rem .45rem; 
+  font-size:.72rem; font-weight:600; margin-left:.2rem;
+}
+
+/* odredi veličinu bedža u korpi da bude vizuelno skladna */
+.badge { background:#b11226; }
+
+/* RWD sitnice */
+@media (max-width: 900px){
+  .hide-sm{ display:none; }
+  .menu { gap:.8rem; }
+  .search { max-width: 100%; }
+}
+@media (max-width: 640px){
+  .menubar { display:none; } /* na malim ekranima sakrij donju traku */
+}
+/* === Footer === */
+.footer {
+  background: #b11226; /* Vivino red */
+  color: #fff;
+  padding-top: 2rem;
+}
+
+.footer-top {
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+.footer-top .feature {
+  flex: 1;
+  display: flex;
+  gap: 1rem;
+}
+.footer-top .icon {
+  font-size: 1.8rem;
+}
+
+.newsletter {
+  display: flex;
+  gap: .5rem;
+}
+.newsletter input {
+  flex: 1;
+  padding: .5rem .7rem;
+  border: none;
+  border-radius: 3px;
+}
+.newsletter button {
+  background: #fff;
+  color: #b11226;
+  border: none;
+  padding: .5rem .9rem;
+  border-radius: 3px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.footer-main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  padding: 2rem 0;
+}
+.footer-col {
+  flex: 1 1 200px;
+}
+.footer-col h5 {
+  margin-bottom: .6rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-bottom: 2px solid #fff;
+  display: inline-block;
+  padding-bottom: .2rem;
+}
+.footer-col ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.footer-col li {
+  margin-bottom: .4rem;
+}
+.footer-col a {
+  color: #fff;
+  opacity: 0.9;
+  text-decoration: none;
+}
+.footer-col a:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+@media (max-width: 800px) {
+  .footer-top { flex-direction: column; }
+  .footer-main { flex-direction: column; }
+}
+/* ===== Footer (compact Vivino) — overrides, scoped i safe ===== */
+footer.footer.footer-compact {
+  background: #b11226 !important; /* Vivino red, pobedjuje ranije .footer pozadine */
+  color: #fff;
+  width: 100%;
+}
+
+footer.footer.footer-compact .container-wide {
+  /* ne diramo globalni .container-wide; samo unutar footera kompaktnije margine */
+  padding-left: 0;
+  padding-right: 0;
+}
+
+footer.footer.footer-compact a {
+  color: #fff !important;
+  text-decoration: none;
+  opacity: 0.95;
+}
+footer.footer.footer-compact a:hover { opacity: 1; text-decoration: underline; }
+
+/* kompaktan tipografski ritam SAMO u footeru */
+footer.footer.footer-compact,
+footer.footer.footer-compact * {
+  font-size: 13.5px;
+  line-height: 1.35;
+}
+
+/* gornja traka (features) */
+footer.footer.footer-compact .footer-top {
+  display: flex;
+  gap: 16px;
+  justify-content: space-between;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(255,255,255,.18);
+}
+footer.footer.footer-compact .feature { display: flex; gap: 10px; flex: 1; }
+footer.footer.footer-compact .feature h4 { margin: 0 0 4px; font-size: 15px; font-weight: 700; }
+footer.footer.footer-compact .feature p { margin: 0; opacity: .9; }
+footer.footer.footer-compact .feature .icon { font-size: 18px; }
+
+/* newsletter input */
+footer.footer.footer-compact .newsletter { display: flex; gap: 8px; }
+footer.footer.footer-compact .newsletter input {
+  background: #121821;
+  color: #fff;
+  border: none;
+  padding: 8px 10px;
+  border-radius: 6px;
+}
+footer.footer.footer-compact .newsletter button {
+  background: #fff; color: #b11226;
+  border: none; padding: 8px 10px; border-radius: 6px; font-weight: 700;
+}
+
+/* glavni grid linkova */
+footer.footer.footer-compact .footer-main {
+  display: flex; flex-wrap: wrap; gap: 18px;
+  padding: 16px 0;
+}
+footer.footer.footer-compact .footer-col { flex: 1 1 220px; }
+footer.footer.footer-compact .footer-col h5 {
+  margin: 0 0 6px; font-size: 14px; text-transform: uppercase;
+  font-weight: 800; border-bottom: 2px solid #fff; display: inline-block; padding-bottom: 2px;
+}
+footer.footer.footer-compact .footer-col p { margin: 4px 0; }
+footer.footer.footer-compact .footer-col ul { list-style: none; margin: 0; padding: 0; }
+footer.footer.footer-compact .footer-col li { margin: 4px 0; position: relative; padding-left: 10px; }
+footer.footer.footer-compact .footer-col li::before {
+  content: "•"; position: absolute; left: 0; top: 0; opacity: .85;
+}
+
+/* donja traka */
+footer.footer.footer-compact .footer-bottom {
+  padding: 10px 0 14px;
+  display: flex; justify-content: space-between; gap: 12px;
+  border-top: 1px solid rgba(255,255,255,.18);
+}
+footer.footer.footer-compact .footer-bottom small { opacity: .92; }
+
+/* responsivnost */
+@media (max-width: 900px) {
+  footer.footer.footer-compact .footer-top,
+  footer.footer.footer-compact .footer-main,
+  footer.footer.footer-compact .footer-bottom {
+    flex-direction: column;
+  }
+}
+
+/* ===== END Footer (compact Vivino) ===== */
+
+
+/* ==== HERO SLIDER FIX ==== */
+/* Ukloni stari ::after koji stavlja Unsplash i preklapa slider */
+.hero::after { content: none !important; }
+
+/* Slider layout */
+.hero.full-bleed { min-height: 56vh; position: relative; }
+.hero-track { position: absolute; inset: 0; overflow: hidden; }
+.hero-slide { position: absolute; inset: 0; opacity: 0; transition: opacity .6s ease; }
+.hero-slide.is-active { opacity: 1; }
+
+/* Slika kao <img>, 50% opacity, preko celog wrappera */
+.hero-img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center;
+  opacity: .7;              /* traženih 50% */
+}
+
+/* Tekst preko slike, centriran i čitljiv */
+.hero-content {
+  position: relative; z-index: 2;
+  color: #fff; text-align: center;
+  padding: 6rem 1rem;
+}
+.hero-content h1 {
+  font-family: "Playfair Display", serif;
+  text-transform: uppercase; letter-spacing: 2px;
+  font-size: clamp(2.2rem, 6vw, 4rem);
+  margin: 0;
+}
+.hero-link {
+  color: #fff;             /* defaultno bela */
+  text-decoration: none;
+  font-weight: 700;
+  transition: color 0.3s ease;
+}
+
+.hero-link:hover,
+.hero-link:focus {
+  color: #b11226;          /* Vivino crvena na hover/focus */
+  text-decoration: none;
+}
+.hero-link::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: -4px;
+  width: 0; height: 2px;
+  background: #fff;
+  transition: width 0.3s ease;
+  color: #b11226
+}
+
+.hero-link:hover::after {
+  width: 100%; /* pojavi se linija ispod teksta */
+}
+
+/* ===== Auth (Login / Signup split) ===== */
+.auth-wrap{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 72vh;
+  background:#fff;
+  border-radius: 16px;
+  overflow: hidden;
+  border:1px solid #eee;
+}
+
+.auth-left{
+  padding: 48px 40px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.auth-left h1{
+  margin: 0 0 20px;
+  font-size: clamp(24px, 3vw, 34px);
+  line-height:1.1;
+  text-align:left;
+}
+.auth-form{ width: 100%; max-width: 420px; }
+
+.input-row{
+  position: relative;
+  display:flex;
+  align-items:center;
+  gap: 10px;
+  margin-bottom: 14px;
+  border:1.5px solid #ff6b9b33; /* subtilno roze */
+  border-radius: 8px;
+  padding: 10px 12px 10px 42px;
+  background:#fff;
+}
+.input-row:focus-within{ border-color:#ff6b9b; box-shadow:0 0 0 3px #ff6b9b22; }
+.input-icon{
+  position:absolute; left:12px; color:#ff6b9b; display:flex; align-items:center;
+}
+.input-row input{
+  width: 100%; border: none; outline: none; background: transparent;
+  font-size: 14px; color:#222;
+}
+.input-row .forgot{
+  position:absolute; right:10px; top:50%; transform:translateY(-50%);
+  font-size: 13px; color:#0e0e0e; opacity:.65; text-decoration:none;
+}
+.input-row .forgot:hover{ opacity:1; text-decoration: underline; }
+
+.form-row{
+  margin-top: 10px;
+  display:flex; align-items:center; justify-content:space-between; gap:10px;
+}
+.remember{ display:flex; align-items:center; gap:8px; font-size:13px; color:#333; }
+.remember input{ width:16px; height:16px; }
+
+.btn-login{
+  background:#ff6b9b; /* roze kao na slici */
+  color:#fff; border:none; border-radius: 999px;
+  padding: 10px 22px; font-weight:700; cursor:pointer;
+}
+.btn-login:hover{ filter:brightness(0.95); }
+
+/* RIGHT panel */
+.auth-right{
+  background: linear-gradient(135deg, #ff6b9b, #ff4f70, #ff3e72);
+  color:#fff;
+  display:flex; align-items:center; justify-content:center;
+}
+.auth-right-inner{
+  text-align:center; padding: 40px; max-width: 420px;
+}
+.auth-right h2{
+  margin:0 0 12px; font-size: clamp(24px, 3vw, 34px);
+}
+.auth-right p{ margin: 0 0 20px; opacity:.95; }
+
+.btn-outline-ghost{
+  display:inline-block;
+  padding: 10px 22px;
+  border-radius: 999px;
+  border:2px solid #fff;
+  color:#fff; text-decoration:none; font-weight:700;
+}
+.btn-outline-ghost:hover{ background:#ffffff1a; }
+
+/* Responsive */
+@media (max-width: 900px){
+  .auth-wrap{ grid-template-columns: 1fr; }
+  .auth-right{ min-height: 38vh; }
+}
+/* ===== Blog layout (light theme) ===== */
+.blog { 
+  padding: 2rem 0 3rem; 
+  background: #fff; /* bela pozadina */
+}
+
+.blog-hero {
+  max-width: 920px;
+  margin: 0 auto 1.5rem;
+  padding: 1.5rem 1rem;
+  background: #fff;        /* bela pozadina */
+  border: 1px solid #eee;  /* svetla ivica */
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, .05);
+}
+
+.blog-hero h1 {
+  font-family: "Playfair Display", serif;
+  font-size: clamp(1.9rem, 3.8vw, 2.6rem);
+  line-height: 1.15;
+  margin: 0 0 .75rem;
+  color: #b11226; /* Vivino crvena */
+}
+
+.blog-hero .lede {
+  color: #333;
+  font-size: 1.05rem;
+  max-width: 72ch;
+  margin: 0;
+}
+
+
+/* Dve kolone */
+.blog-grid {
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem 1.25rem;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.blog-media {
+  background:#fafafa; 
+  border:1px solid #ddd;
+  border-radius:12px;
+  overflow:hidden;
+  box-shadow: 0 4px 12px rgba(0,0,0,.05);
+  display:flex; 
+  flex-direction:column;
+}
+
+.blog-img { width:100%; height:auto; display:block; }
+
+.blog-media figcaption {
+  font-size:.9rem; 
+  color:#555; 
+  padding:.6rem .9rem;
+  border-top:1px solid #eee;
+}
+
+.blog-copy {
+  background:#fafafa;
+  border:1px solid #ddd;
+  border-radius:12px;
+  padding:1.1rem 1.2rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,.05);
+}
+
+.blog-copy h2 {
+  font-family:"Playfair Display", serif;
+  font-size: clamp(1.2rem, 2.6vw, 1.5rem);
+  margin:.2rem 0 .6rem;
+  color:#b11226; /* Vivino crvena */
+}
+
+.blog-copy p { 
+  color:#333; 
+  margin:.5rem 0; 
+}
+
+.blog-copy .note {
+  background:#fff8f0; 
+  border-left:3px solid #b11226;
+  padding:.6rem .75rem; 
+  border-radius:8px;
+}
+
+/* Responsivno */
+@media (max-width: 960px){
+  .blog-grid { grid-template-columns: 1fr; }
+}
+
+.brand-flag{ margin-left:.35rem; font-size:1.05rem; vertical-align:middle; }
+.shipto{ position:relative; }
+.shipto-btn{ display:flex; align-items:center; gap:.4rem; }
+.shipto-flag{ font-size:1rem; line-height:1; }
+.shipto-menu{
+  position:absolute; top:calc(100% + 8px); right:0; min-width:220px;
+  background:#fff; border:1px solid #e7e7e7; border-radius:10px;
+  box-shadow:0 12px 26px rgba(0,0,0,.08); padding:6px; z-index:50;
+}
+.shipto-item{
+  width:100%; display:flex; align-items:center; gap:.5rem;
+  padding:8px 10px; background:transparent; border:none; border-radius:8px;
+  cursor:pointer; text-align:left; color:#222;
+}
+.shipto-item:hover{ background:#f6f6f6; }
+.shipto-item.is-selected{ background:#fff4f5; border:1px solid #ffd7dc; }
+@media (max-width:640px){ .brand-flag{ display:none; } }
+
+/* ===== Auth (brand) ===== */
+.auth-wrap.brand-auth{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 72vh;
+  background:#fff;
+  border-radius:16px;
+  overflow:hidden;
+  border:1px solid #eee;
+  margin: 24px 0;
+}
+
+/* LEFT */
+.auth-left{
+  padding:48px 28px;
+  display:flex; align-items:center; justify-content:center;
+  background:#fff;
+}
+.auth-card{
+  width:100%; max-width:480px;
+  background:#fff;
+  border:1px solid #eee;
+  border-radius:14px;
+  padding:24px;
+  box-shadow:0 10px 30px rgba(0,0,0,.06);
+}
+.auth-card h1{
+  margin:0 0 14px; line-height:1.15;
+  font-size: clamp(24px, 3.4vw, 34px);
+  font-family:"Playfair Display", serif;
+  color:#b11226; /* Vivino crvena */
+}
+
+.auth-form{ display:block; }
+
+.input-row{
+  position:relative; margin-bottom:12px;
+  display:flex; flex-direction:column; gap:6px;
+}
+.input-row.light input{
+  height:44px; padding:0 12px; border-radius:10px;
+  border:1.5px solid #e6e6e6; background:#fff; color:#222;
+  font-size:15px; outline:none;
+}
+.input-row.light input::placeholder{ color:#9aa0a6; }
+.input-row.light input:focus{
+  border-color:#b11226;
+  box-shadow:0 0 0 3px rgba(177,18,38,.12);
+}
+.input-label{ font-size:13px; color:#555; }
+
+.inline-link{
+  position:absolute; right:10px; bottom:9px;
+  font-size:13px; color:#b11226; text-decoration:none;
+}
+.inline-link:hover{ text-decoration:underline; }
+
+.form-row{
+  display:flex; align-items:center; justify-content:space-between;
+  gap:12px; margin-top:8px;
+}
+.remember{ display:flex; align-items:center; gap:8px; color:#333; font-size:13px; }
+.remember input{ width:16px; height:16px; }
+
+.btn-primary{
+  background:#b11226; color:#fff; border:none;
+  padding:10px 20px; border-radius:999px; font-weight:700;
+  cursor:pointer;
+}
+.btn-primary:hover{ filter:brightness(.95); }
+
+.meta{ margin-top:10px; font-size:14px; color:#444; }
+
+/* RIGHT (promo) */
+.auth-right{
+  display:flex; align-items:center; justify-content:center;
+  color:#fff;
+}
+.brand-grad{
+  background: linear-gradient(135deg, #b11226 0%, #cf2a3b 40%, #e04a57 100%);
+}
+.auth-right-inner{
+  text-align:center; padding:40px; max-width:420px;
+}
+.auth-right h2{
+  margin:0 0 12px; font-size: clamp(24px, 3.4vw, 34px);
+  font-family:"Playfair Display", serif;
+}
+.auth-right p{ margin:0 0 18px; font-size:16px; }
+
+.btn-ghost{
+  display:inline-block; padding:10px 22px; border-radius:999px;
+  border:2px solid #fff; color:#fff; text-decoration:none; font-weight:700;
+}
+.btn-ghost:hover{ background:#ffffff1a; }
+
+/* Responsive */
+@media (max-width: 900px){
+  .auth-wrap.brand-auth{ grid-template-columns: 1fr; }
+  .auth-right{ min-height: 38vh; }
+}
+/* ===== Product card (readable, brand-aligned) ===== */
+.card.product-card{
+  background:#fff;                /* bela kao ostatak sajta */
+  border:1px solid #eee;
+  border-radius:16px;
+  padding:12px;                   /* manji padding = više prostora slici/tekstu */
+  box-shadow:0 8px 24px rgba(0,0,0,.04);
+}
+
+/* Slika ostaje čista; nema traka preko nje */
+.card.product-card .thumb{
+  aspect-ratio: 4 / 5;
+  background:#fff;
+  border-radius:12px;
+  overflow:hidden;
+  margin-bottom:.65rem;
+  box-shadow: inset 0 0 0 1px #f0f0f0;
+}
+
+/* Ako postoji neki overlay/traka iz starog CSS-a – ugasi je ovde */
+.card.product-card .title-bar,
+.card.product-card .overlay {
+  position: static !important;
+  background: transparent !important;
+  color: inherit !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+  border: 0 !important;
+}
+
+/* Naslov vina ispod slike — 2 reda, Playfair, taman */
+.card.product-card .title{
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: clamp(.98rem, 1.2vw, 1.05rem);
+  line-height: 1.25;
+  color:#111;
+  margin: 0 0 .35rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;          /* najviše 2 reda */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Dodatne meta info (npr. godina, region) – diskretno */
+.card.product-card .meta{
+  color:#6b6b6b;
+  font-size:.85rem;
+  margin:.1rem 0 .55rem;
+}
+
+/* Cena + dugme u istom redu, jasno odvojeno */
+.card.product-card .actions{
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  gap:.6rem;
+  margin-top:.35rem;
+}
+
+/* Cena: velika, tamna; valuta diskretnije */
+.card.product-card .price{
+  font-weight:800;
+  font-size: clamp(1.02rem, 1.6vw, 1.12rem);
+  color:#111;
+}
+.card.product-card .currency{
+  font-weight:600;
+  font-size:.85rem;
+  color:#777;
+  margin-left:.25rem;
+}
+
+/* Dugme: Vivino crvena, zaobljeno, čitljiv kontrast */
+.card.product-card .add-btn{
+  background:#b11226;
+  color:#fff;
+  border:none;
+  border-radius:12px;
+  padding:.55rem .9rem;
+  font-weight:700;
+  cursor:pointer;
+  white-space:nowrap;
+  transition: filter .15s ease, transform .06s ease;
+}
+.card.product-card .add-btn:hover{ filter:brightness(.95); }
+.card.product-card .add-btn:active{ transform: translateY(1px); }
+
+/* Sitni ritam i spacing */
+.card.product-card .badges{ margin:.15rem 0 .35rem; }
+.card.product-card .badge{ background:#b11226; font-size:.68rem; padding:.05rem .45rem; }
+/* ===== CART ===== */
+.cart-wrap { padding-top: 12px; padding-bottom: 24px; }
+.cart-title { font-size: clamp(1.4rem, 2.4vw, 1.8rem); margin: 0 0 12px; }
+
+.cart-empty {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 16px;
+  padding: 28px;
+  text-align: center;
+  box-shadow: 0 10px 24px rgba(0,0,0,.04);
+}
+.cart-empty .btn-primary { margin-top: 10px; }
+
+/* tabela kao “clean card” */
+.cart-table {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 24px rgba(0,0,0,.04);
+}
+.cart-tr { display: grid; grid-template-columns: 1fr 140px 160px 120px; align-items: center; }
+.cart-thead .cart-tr { background: #f8f8f8; }
+.cart-tbody .cart-tr + .cart-tr { border-top: 1px solid #f1f1f1; }
+
+.cart-th, .cart-td { padding: 14px 16px; }
+.cart-th { font-weight: 700; color: #333; }
+.cart-td { color: #101010; }
+
+.cart-name { font-family: "Playfair Display", serif; font-weight: 700; font-size: 1.03rem; }
+
+/* količina: kompaktan steper */
+.qty-control{
+  display: inline-grid;               /* fiksna mreža: [−] [input] [+] */
+  grid-template-columns: 36px 64px 36px;
+  align-items: center;
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  background: #fff;
+  overflow: visible;                  /* da ništa ne seče klik-zonu */
+}
+
+.qty-control input{
+  width: 64px;                        /* tačno koliko je kolona 2 */
+  height: 36px;
+  border: none;
+  text-align: center;
+  font-weight: 700;
+  color: #111;
+  background: #fff;                   /* nikakav tamni overlay */
+  outline: none;
+  line-height: 36px;
+  padding: 0;                         /* bez paddinga = centrirano */
+  border-left: 1px solid #e6e6e6;
+  border-right: 1px solid #e6e6e6;
+}
+
+.qty-btn{
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: #f4f4f4;
+  color: #222;
+  font-size: 1.1rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.qty-btn:hover{ filter: brightness(.95); }
+.qty-btn:active{ transform: translateY(1px); }
+
+/* malo zategni na užim ekranima */
+@media (max-width: 680px){
+  .qty-control{
+    grid-template-columns: 32px 56px 32px;
+  }
+  .qty-control input{ width: 56px; height: 32px; line-height: 32px; }
+  .qty-btn{ width: 32px; height: 32px; }
+}
+/* ===== Catalog layout ===== */
+.catalog{
+  display:grid;
+  grid-template-columns: 260px 1fr;
+  gap: 1.25rem;
+  padding-top: .75rem;
+  padding-bottom: 1.25rem;
+}
+
+.filter-card{
+  background:#fff;
+  border:1px solid #eee;
+  border-radius:16px;
+  padding:14px;
+  box-shadow:0 8px 24px rgba(0,0,0,.04);
+  height: max-content;
+}
+.filter-group{ margin-bottom: .9rem; }
+.filter-group strong{ display:block; margin-bottom:.4rem; }
+.filter-card input, .filter-card select{
+  width:100%;
+  border:1px solid #e6e6e6;
+  border-radius:10px;
+  padding:.6rem .7rem;
+  background:#fff;
+}
+.price-row{ display:flex; gap:.5rem; }
+.price-row input{ flex:1; }
+
+/* head */
+.catalog-head{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  margin-bottom:.6rem;
+}
+.chips{ display:flex; flex-wrap:wrap; gap:.4rem; align-items:center; }
+.chip{
+  background:#f2f2f2; color:#333; border-radius:999px; padding:.25rem .6rem; font-size:.85rem;
+}
+.chip.active{ background:#b11226; color:#fff; }
+.chip.muted{ background:#f2f2f2; color:#777; }
+.sort-select{
+  background:#161b22; color:#fff; border:0; border-radius:10px; padding:.55rem .8rem;
+}
+
+/* grid sa karticama */
+.grid-cards{
+  display:grid;
+  gap: 1rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+@media (max-width: 1200px){
+  .grid-cards{ grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+@media (max-width: 900px){
+  .catalog{ grid-template-columns: 1fr; }
+  .grid-cards{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 560px){
+  .grid-cards{ grid-template-columns: 1fr; }
+}
+
+/* skeleton */
+.card.skeleton{
+  height: 320px;
+  border-radius:16px;
+  background: linear-gradient(90deg, #f3f3f3 25%, #ececec 37%, #f3f3f3 63%);
+  background-size: 400% 100%;
+  animation: shimmer 1.2s infinite;
+  border:1px solid #eee;
+}
+@keyframes shimmer{
+  0%{ background-position: 200% 0; }
+  100%{ background-position: -200% 0; }
+}
+
+/* empty state */
+.empty-state{
+  background:#fff;
+  border:1px solid #eee;
+  border-radius:16px;
+  padding:28px;
+  text-align:center;
+  color:#444;
+  box-shadow:0 8px 24px rgba(0,0,0,.04);
+}
+
+/* pager */
+.pager{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  gap:.75rem;
+  margin-top: 1rem;
+}
+.pager button{
+  background:#bfbfbf; color:#fff; border:0; border-radius:12px; padding:.55rem .9rem; font-weight:700;
+}
+.pager button:disabled{ opacity:.5; cursor:not-allowed; }
+
+/* kompatibilno sa tvojom ProductCard klasom */
+.card.product-card{ height: 100%; }
+
+/* Admin layout */
+.admin-wrap { padding-top: 10px; padding-bottom: 18px; }
+.tabs { display:flex; gap:.5rem; margin:.35rem 0 1rem; }
+.tabs button{
+  border:1px solid #eee; background:#fff; color:#222; border-radius:12px;
+  padding:.55rem .9rem; font-weight:700; cursor:pointer;
+}
+.tabs button.active{ background:#b11226; color:#fff; border-color:#b11226; }
+
+.admin-card{
+  background:#fff; border:1px solid #eee; border-radius:16px;
+  box-shadow:0 10px 24px rgba(0,0,0,.04); overflow:hidden;
+}
+.admin-head{
+  display:flex; justify-content:space-between; align-items:center;
+  padding:12px 14px; border-bottom:1px solid #f1f1f1;
+}
+.admin-head h3{ margin:0; }
+
+/* tables */
+.adm-table{ width:100%; border-collapse:collapse; }
+.adm-table thead tr{ background:#f8f8f8; }
+.adm-table th, .adm-table td{ padding:12px 14px; text-align:left; border-bottom:1px solid #f1f1f1; }
+.adm-table .row-actions{ display:flex; gap:.4rem; }
+.muted{ color:#6b6b6b; }
+
+/* drawer/form */
+.drawer{ position:fixed; inset:0; background:rgba(0,0,0,.25); display:flex; justify-content:flex-end; }
+.drawer-card{
+  width:min(560px, 92vw); height:100%; background:#fff; padding:16px; overflow:auto;
+  box-shadow:-12px 0 24px rgba(0,0,0,.15);
+}
+.drawer-head{ display:flex; justify-content:space-between; align-items:center; margin-bottom:10px; }
+.form-grid{ display:grid; gap:.65rem; grid-template-columns: repeat(2, 1fr); }
+.form-grid label{ display:flex; flex-direction:column; gap:.25rem; }
+.form-grid .full{ grid-column: 1 / -1; }
+.form-grid input, .form-grid select, .form-grid textarea{
+  border:1px solid #e6e6e6; border-radius:10px; padding:.6rem .7rem; background:#fff;
+}
+.drawer-actions{ display:flex; justify-content:flex-end; gap:.55rem; margin-top:.65rem; }
+
+/* buttons (same as elsewhere) */
+.btn-primary{
+  background:#b11226; color:#fff; border:none; border-radius:12px; padding:.55rem .9rem; font-weight:700; cursor:pointer;
+}
+.btn-ghost{
+  background:#fff; border:1px solid #e3e3e3; color:#222; border-radius:12px; padding:.5rem .8rem; font-weight:600; cursor:pointer;
+}
+.btn-ghost.danger{ color:#b11226; border-color:#f0c2c8; }
+.pill { padding: .5rem .9rem; border-radius: 999px; background:#eee; border:none; cursor:pointer; }
+.pill.active { background:#c0192f; color:#fff; }
+.btn-primary { background:#c0192f; color:#fff; border:none; padding:.6rem 1rem; border-radius:.6rem; }
+.card { background:#fff; border-radius:16px; box-shadow:0 10px 30px rgba(0,0,0,.06); }
+
+
